@@ -9,10 +9,10 @@ dockerpath="opexception/udacity-projects:udacity-microservices"
 
 # Step 2
 # Run the Docker Hub container with kubernetes
-kubectl run flaskskearlndemo\
+kubectl run udacity-microservices\
     --generator=run-pod/v1\
     --image=$dockerpath\
-    --port=80 --labels app=flaskskearlndemo
+    --port=80 --labels app=udacity-microservices
 
 # Step 3:
 # List kubernetes pods
@@ -20,4 +20,4 @@ kubectl get pods
 
 # Step 4:
 # Forward the container port to a host
-kubectl port-forward flaskskearlndemo 8000:80
+kubectl port-forward udacity-microservices 8000:80
