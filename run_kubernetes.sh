@@ -19,4 +19,12 @@ kubectl get pods
 
 # Step 4:
 # Forward the container port to a host
+running=0
+while [ $running -eq 0 ]
+    do
+        if $(kubectl get pods | grep -q Running)
+            then running=1
+            else sleep 2
+        fi
+    done
 kubectl port-forward udacity-microservices 8000:80
