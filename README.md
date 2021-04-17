@@ -1,4 +1,4 @@
-[![opexception](https://circleci.com/gh/opexception/udacity-microservices.svg?style=svg)](https://app.circleci.com/pipelines/github/opexception/udacity-microservices)
+[![opexception](https://circleci.com/gh/opexception/udacity-microservices.svg?style=shield)](https://app.circleci.com/pipelines/github/opexception/udacity-microservices)
 
 ## Project Overview
 
