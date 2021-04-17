@@ -10,7 +10,6 @@ dockerpath="opexception/udacity-projects:udacity-microservices"
 # Step 2
 # Run the Docker Hub container with kubernetes
 kubectl run udacity-microservices\
-    --generator=run-pod/v1\
     --image=$dockerpath\
     --port=80 --labels app=udacity-microservices
 
