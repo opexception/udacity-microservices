@@ -16,8 +16,8 @@ install:
 	pip install --no-cache-dir --upgrade pip && \
 		pip install --no-cache-dir -r requirements.txt
 	
-	sudo wget -O /usr/local/bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Linux-x86_64
-	sudo chmod +x /usr/local/bin/hadolint
+	wget -O /usr/local/bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Linux-x86_64
+	chmod +x /usr/local/bin/hadolint
 
 test:
 	# Additional, optional, tests could go here
