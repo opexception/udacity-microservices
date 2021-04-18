@@ -16,8 +16,8 @@ install:
 	pip install --no-cache-dir --upgrade pip && \
 		pip install --no-cache-dir -r requirements.txt
 	
-	wget -O /usr/local/bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Linux-x86_64
-	chmod +x /usr/local/bin/hadolint
+	wget -O ./hadolint https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Linux-x86_64
+	chmod +x ./hadolint
 
 test:
 	# Additional, optional, tests could go here
@@ -27,7 +27,7 @@ test:
 lint:
 	# See local hadolint install instructions:   https://github.com/hadolint/hadolint
 	# This is linter for Dockerfiles
-	hadolint Dockerfile
+	./hadolint Dockerfile
 	# This is a linter for Python source code linter: https://www.pylint.org/
 	# This should be run from inside a virtualenv
 	. ~/.udacity-microservices/bin/activate; \
