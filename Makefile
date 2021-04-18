@@ -8,12 +8,16 @@
 setup:
 	# Create python virtualenv & source it
 	# source ~/.devops/bin/activate
-	python3 -m venv ~/venv/udacity-microservices
+	python3 -m venv ~/.udacity-microservices
 
 install:
 	# This should be run from inside a virtualenv
-	pip install --no-cache-dir --upgrade pip &&\
+	. ~/.udacity-microservices/bin/activate; \
+	pip install --no-cache-dir --upgrade pip && \
 		pip install --no-cache-dir -r requirements.txt
+	
+	sudo wget -O /usr/local/bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Linux-x86_64
+	sudo chmod +x /usr/local/bin/hadolint
 
 test:
 	# Additional, optional, tests could go here
@@ -26,6 +30,7 @@ lint:
 	hadolint Dockerfile
 	# This is a linter for Python source code linter: https://www.pylint.org/
 	# This should be run from inside a virtualenv
+	. ~/.udacity-microservices/bin/activate; \
 	pylint --disable=R,C,W1203,W1202,W1309 app.py
 
 all: install lint test
